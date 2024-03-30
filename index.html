@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <audio 
+        id="audio-player"
+        class="audio-player"
+        controls 
+        src="https://d16tg4vw4aif1l.cloudfront.net/u34my3%2Ffile%2Fda7a097a2b9c880eb7e84958fc5335ea_50c2f2424e0a6b7dee6f96634e8d0b86.mp3?response-content-disposition=inline%3Bfilename%3D%22da7a097a2b9c880eb7e84958fc5335ea_50c2f2424e0a6b7dee6f96634e8d0b86.mp3%22%3B&response-content-type=audio%2Fmpeg&Expires=1711736672&Signature=P~x0E7BPEkjqOr~rZhSbGV-2g~kx8ubLqytBclG58KhDa380Se-mpQeUPi6z~fgUpGz8VeMjVrSywZjVEsx1UzucaUTNy3IgyJU9NsEako7QLCrZkM8Ncerfq3-xf7YesLGVTQQiG-Yf1h29KTBwCfgjKCFjYL~P3C~lLp3A5T~kk8vN7dopGoA-yIqo3aA1QP4p0EiXDNFTFitCP-C7ZYBzBfXdLAe6QDv-HoYqNlKPTN2L8OQXVAf-SqZ3T4vlATP0~TZmt5dML-85N0NCjKjfaTKvMBUZBPO8fG9nJpjpWMgsFaQpip-zJuj8A0GG5daCvUxZGfejkzwT0FmAkg__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ"
+    ></audio>
+    <main class="container">
+        <nav class="nav">
+            <div class="hamburger">
+                <div class="btn btn--primary btn--nav hamburger-icon"></div>
+                <div class="hamburger-list">    
+                    <a 
+                        href=""
+                        class="hamburger-link"
+                    ></a>
+                    <a 
+                        href=""
+                        class="hamburger-link"
+                    ></a>
+                    <a 
+                        href=""
+                        class="hamburger-link"
+                    ></a>
+                </div>
+            </div>
+            <div class="btn btn--primary btn--nav save-to-playlist"></div>
+        </nav>
+        <section class="song-info">
+            <div class="titles">
+                <h1 class="playing-now">
+                    PLAYING NOW
+                </h1>
+                <h1 class="song-title">
+                    Cavern
+                </h1>
+                <h2 class="song-author">
+                    Nobou Uematsu
+                </h2>
+            </div>
+            <img 
+                src="https://i.ytimg.com/vi/IBth0zRKu5U/hqdefault.jpg"
+                alt="placeholder" 
+                class="song-photo"
+            >
+        </section>
+        <section class="controls">
+            <div class="timeline-container">
+                <div class="timeline">
+                    <div class="fill"></div>
+                </div>
+                <div class="timeline-info">
+                    <span class="timeline-current">
+                        0:00
+                    </span>
+                    <span class="timeline-ends"> 
+                        4:37
+                    </span>
+                </div>
+            </div>
+            <div class="main-controls">
+                <button class="btn btn--primary btn--controls loop"></button>
+                <button class="btn btn--primary btn--controls previous-track"></button>
+                <button class="btn btn--primary btn--controls play-pause"></button>
+                <button class="btn btn--primary btn--controls next-track"></button>
+                <button class="btn btn--primary btn--controls shuffle"></button>
+            </div>
+        </section>
+        <section class="songs">
+            <ul class="songs-list">
+                <li class="song">
+                    <span class="song-item-name">
+                        Calm Waterside
+                    </span>
+                    <span class="song-duration">
+                        3:37
+                    </span>
+                </li> 
+                <li class="song">
+                    <span class="song-item-name">
+                        Mako Reactor
+                    </span>
+                    <span class="song-duration">
+                        3:22
+                    </span>
+                </li> 
+                <li class="song active">
+                    <span class="song-item-name">
+                        Cavern
+                    </span>
+                    <span class="song-duration">
+                        2:12
+                    </span>
+                </li> 
+                <li class="song">
+                    <span class="song-item-name">
+                        Eternity
+                    </span>
+                    <span class="song-duration">
+                        2:47
+                    </span>
+                </li> 
+                <li class="song">
+                    <span class="song-item-name">
+                        Zbroja
+                    </span>
+                    <span class="song-duration">
+                        4:37
+                    </span>
+                </li> 
+            </ul>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
