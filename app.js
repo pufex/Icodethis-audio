@@ -38,8 +38,7 @@ const songs = [
 
 const mainControls = document.querySelector(".main-controls");
 const playPause = mainControls.querySelector(".play-pause");
-
-console.log(songs[0].time)
+const loopButton = mainControls.querySelector(".loop");
 
 const secondsToTime = (secondsReceived) => {
     let seconds, minutes, hours;
@@ -49,7 +48,7 @@ const secondsToTime = (secondsReceived) => {
     if (hours > 0)
         arr.push(hours.toString());
     currentSeconds -= hours * 3600;
-    minutes = (Math.floor(currentSeconds / 60)).toString(); 
+    minutes = (Math.floor(currentSeconds / 60)).toString();
     if (hours > 0 && minutes < 10) {
         minutes = ["0", (Number(minutes).toFixed(0)).toString()].join("");
         arr.push(minutes);
@@ -70,7 +69,6 @@ const secondsToTime = (secondsReceived) => {
 const timeToSeconds = (time) => {
 
     // Setup Code
-    console.log("Time received", time, "is of type", typeof time)
     const countLetterInString = (str, char) => {
         let iteration = 0;
         let helpStr = str;
@@ -119,13 +117,11 @@ const shuffleHandler = (previousId) => {
     if(newId == previousId)
         shuffleHandler(previousId);
     else{
-        alert("cock and balls torture")
         lastTime = 0;
         setList(newId);
         setSong(newId);
         setProgress(1, 0)
     }
-
 }
 
 audioPlayer.addEventListener("ended", () => {
@@ -134,9 +130,13 @@ audioPlayer.addEventListener("ended", () => {
     setProgress(1,1)
     if(shouldShuffle) 
         shuffleHandler(Number(audioPlayer.getAttribute("current-audio-id")));
-    else if(audioPlayer.hasAttribute("loop")){
+    else if(loopButton.classList.contains("active")){ 
+        audioPlayer.currentTime = 0;
         lastTime = 0;
         setProgress(1,0)
+        if(!playPause.classList.contains("active"))
+            playPause.classList.add("active");
+        audioPlayer.play();
     }
 })
 
@@ -206,9 +206,8 @@ setList(4);
 setSong(4);
 
 
-const loopButton = mainControls.querySelector(".loop");
+
 loopButton.addEventListener("click", () => {
-    audioPlayer.toggleAttribute("loop");
     loopButton.classList.toggle("active");
 })
 
@@ -216,7 +215,6 @@ loopButton.addEventListener("click", () => {
 playPause.addEventListener("click", () => {
     if (audioPlayer.paused){
         if(audioPlayer.currentTime === audioPlayer.duration){
-            alert("ambatubeer")
             setProgress(1,0);
             lastTime = 0;
             audioPlayer.currentTime = 0;
